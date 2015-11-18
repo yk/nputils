@@ -27,7 +27,7 @@ def msqrt(M):
     return ms
 
 
-def score_log_plot(results, title, subtract_min=True):
+def score_log_plot(results, title, subtract_min=True, ylabel="Objective Value"):
     """
     results must be a list of tuples
     (label, epochs, means, stds)
@@ -46,6 +46,6 @@ def score_log_plot(results, title, subtract_min=True):
     ax.set_yscale('log')
     ax.legend(loc=0)
     ax.set_xlabel("Epoch")
-    ax.set_ylabel("Objective Value")
-    ax.set_title("title")
+    ax.set_ylabel(ylabel)
+    ax.set_title(title)
 
