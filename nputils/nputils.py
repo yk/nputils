@@ -49,3 +49,7 @@ def score_log_plot(results, title, subtract_min=True, ylabel="Objective Value"):
     ax.set_ylabel(ylabel)
     ax.set_title(title)
 
+
+def show_plots():
+    return plt.show()
+
