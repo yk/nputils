@@ -30,7 +30,7 @@ def msqrt(M):
 def score_log_plot(results, title, subtract_min=True):
     """
     results must be a list of tuples
-    (label, xs, means, stds)
+    (label, epochs, means, stds)
     """
     minScore = np.min([r[2] for r in results]) + 1e-13 if subtract_min else 0.0
     fig = plt.figure()
