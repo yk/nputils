@@ -7,7 +7,7 @@ name = 'nputils'
 setup(
     name=name,
     version='0.0.1',
-    packages=['.'],
+    packages=[''],
     package_dir={'': name},
     url='',
     license='MIT',
