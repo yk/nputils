@@ -1,4 +1,5 @@
 import numpy as np
+import sklearn.preprocessing
 import matplotlib.pyplot as plt
 
 
@@ -25,6 +26,10 @@ def msqrt(M):
     (u, s, vt) = np.linalg.svd(M)
     ms = np.dot(u, np.dot(np.diag(np.sqrt(s)), vt))
     return ms
+
+
+def normalizev(v, norm='l2'):
+    return np.ravel(sklearn.preprocessing.normalize(v[np.newaxis, :], norm=norm))
 
 
 def score_log_plot(results, title, subtract_min=True, ylabel="Objective Value"):
