@@ -42,11 +42,11 @@ def score_log_plot(results, title, subtract_min=True, ylabel="Objective Value"):
     ax = fig.add_subplot(1, 1, 1)
     for result in results:
         meanScores = result[2]
-        meanScores -= minScore
+        subMeanScores = meanScores - minScore
         stdScores = result[3]
         epochs = result[1]
-        base_line, = ax.plot(epochs, meanScores, label=str(result[0]))
-        ax.fill_between(epochs, meanScores - stdScores, meanScores + stdScores, alpha=0.5,
+        base_line, = ax.plot(epochs, subMeanScores, label=str(result[0]))
+        ax.fill_between(epochs, subMeanScores - stdScores, subMeanScores + stdScores, alpha=0.5,
                         facecolor=base_line.get_color())
     ax.set_yscale('log')
     ax.legend(loc=0)
